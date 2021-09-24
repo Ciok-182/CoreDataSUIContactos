@@ -13,6 +13,7 @@
 		34338FF326FE7A2F00695558 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34338FF226FE7A2F00695558 /* Preview Assets.xcassets */; };
 		34338FF526FE7A2F00695558 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34338FF426FE7A2F00695558 /* Persistence.swift */; };
 		34338FF826FE7A2F00695558 /* ContactosCoreDataSUI.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 34338FF626FE7A2F00695558 /* ContactosCoreDataSUI.xcdatamodeld */; };
+		3433900026FE7B6C00695558 /* Contactos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34338FFF26FE7B6C00695558 /* Contactos.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		34338FF226FE7A2F00695558 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		34338FF426FE7A2F00695558 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		34338FF726FE7A2F00695558 /* ContactosCoreDataSUI.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ContactosCoreDataSUI.xcdatamodel; sourceTree = "<group>"; };
+		34338FFF26FE7B6C00695558 /* Contactos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contactos.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +57,7 @@
 		34338FEA26FE7A2D00695558 /* ContactosCoreDataSUI */ = {
 			isa = PBXGroup;
 			children = (
+				34338FFE26FE7B5D00695558 /* Modelos */,
 				34338FEB26FE7A2D00695558 /* ContactosCoreDataSUIApp.swift */,
 				34338FED26FE7A2D00695558 /* ContentView.swift */,
 				34338FEF26FE7A2F00695558 /* Assets.xcassets */,
@@ -71,6 +74,14 @@
 				34338FF226FE7A2F00695558 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		34338FFE26FE7B5D00695558 /* Modelos */ = {
+			isa = PBXGroup;
+			children = (
+				34338FFF26FE7B6C00695558 /* Contactos.swift */,
+			);
+			path = Modelos;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -145,6 +156,7 @@
 			files = (
 				34338FF526FE7A2F00695558 /* Persistence.swift in Sources */,
 				34338FF826FE7A2F00695558 /* ContactosCoreDataSUI.xcdatamodeld in Sources */,
+				3433900026FE7B6C00695558 /* Contactos.swift in Sources */,
 				34338FEE26FE7A2D00695558 /* ContentView.swift in Sources */,
 				34338FEC26FE7A2D00695558 /* ContactosCoreDataSUIApp.swift in Sources */,
 			);
