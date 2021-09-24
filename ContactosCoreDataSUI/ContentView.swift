@@ -12,7 +12,32 @@ struct ContentView: View {
 
     var body: some View {
         
-        Text("Select an item")
+        NavigationView{
+            
+            VStack{
+                List{
+                        Text("Contenido")
+                }
+                
+                NavigationLink(destination: AgregarContactoView()){
+                    Spacer()
+                    Image(systemName: "plus.app.fill")
+                        .foregroundColor(.white)
+                        .font(.title)
+                    Text("Guardar contacto")
+                        .foregroundColor(.white)
+                        .font(.title)
+                    Spacer()
+                }.padding()
+                    .background(Color.green)
+                    .navigationBarTitle("Contactos", displayMode: .inline)
+            }
+            
+           
+            
+            
+            
+        }//NavigationView
     }
 
 }
