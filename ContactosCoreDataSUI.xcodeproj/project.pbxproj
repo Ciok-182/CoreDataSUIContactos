@@ -15,6 +15,8 @@
 		34338FF826FE7A2F00695558 /* ContactosCoreDataSUI.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 34338FF626FE7A2F00695558 /* ContactosCoreDataSUI.xcdatamodeld */; };
 		3433900026FE7B6C00695558 /* Contactos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34338FFF26FE7B6C00695558 /* Contactos.swift */; };
 		3433900326FE7BFD00695558 /* AgregarContactoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3433900226FE7BFD00695558 /* AgregarContactoView.swift */; };
+		3433900526FEA36800695558 /* CeldaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3433900426FEA36800695558 /* CeldaView.swift */; };
+		3433900726FEAA3200695558 /* DetalleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3433900626FEAA3200695558 /* DetalleView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +29,8 @@
 		34338FF726FE7A2F00695558 /* ContactosCoreDataSUI.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ContactosCoreDataSUI.xcdatamodel; sourceTree = "<group>"; };
 		34338FFF26FE7B6C00695558 /* Contactos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contactos.swift; sourceTree = "<group>"; };
 		3433900226FE7BFD00695558 /* AgregarContactoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgregarContactoView.swift; sourceTree = "<group>"; };
+		3433900426FEA36800695558 /* CeldaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CeldaView.swift; sourceTree = "<group>"; };
+		3433900626FEAA3200695558 /* DetalleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalleView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +95,8 @@
 			isa = PBXGroup;
 			children = (
 				3433900226FE7BFD00695558 /* AgregarContactoView.swift */,
+				3433900426FEA36800695558 /* CeldaView.swift */,
+				3433900626FEAA3200695558 /* DetalleView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -167,8 +173,10 @@
 			files = (
 				34338FF526FE7A2F00695558 /* Persistence.swift in Sources */,
 				34338FF826FE7A2F00695558 /* ContactosCoreDataSUI.xcdatamodeld in Sources */,
+				3433900726FEAA3200695558 /* DetalleView.swift in Sources */,
 				3433900026FE7B6C00695558 /* Contactos.swift in Sources */,
 				34338FEE26FE7A2D00695558 /* ContentView.swift in Sources */,
+				3433900526FEA36800695558 /* CeldaView.swift in Sources */,
 				34338FEC26FE7A2D00695558 /* ContactosCoreDataSUIApp.swift in Sources */,
 				3433900326FE7BFD00695558 /* AgregarContactoView.swift in Sources */,
 			);
