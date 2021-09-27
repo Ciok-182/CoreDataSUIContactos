@@ -30,7 +30,7 @@ struct ContentView: View {
                 List {
                     ForEach(contactos) { contacto in
                         
-                        NavigationLink(destination: DetalleView(), label: {
+                        NavigationLink(destination: DetalleView(contacto: contacto), label: {
                             CeldaView(nombre: contacto.nombre, apellido: contacto.apellido, telefono: contacto.telefono, iniciales: contacto.iniciales)
                         })
                         

@@ -8,21 +8,25 @@
 import SwiftUI
 
 struct DetalleView: View {
+    @Environment(\.presentationMode) var atras
+    
+    var contacto : Contactos
+    
     var body: some View {
         VStack{
-            Text("JE")
+            Text(contacto.iniciales)
                 .padding(20)
                 .background(Color.gray)
                 .clipShape(Circle())
                 .foregroundColor(.white)
                 .font(.custom("Arial", size: 100))
             VStack(alignment: .center){
-                Text("Nombre")
+                Text(contacto.nombre)
                     .font(.title)
                     .bold()
-                Text("Apellido")
+                Text(contacto.apellido)
                     .font(.headline)
-                Text("5544332211")
+                Text(contacto.telefono)
                     .font(.title)
                     .foregroundColor(.secondary)
                     //.padding([.top], 0.001)
@@ -33,12 +37,12 @@ struct DetalleView: View {
                         Image(systemName: "phone.fill")
                             .modifier(botonCircular(color: .green))
                     }
-                    Button(action: {
-                        print("c")
-                    }){
+                    
+                    NavigationLink(destination: EditarView(contacto: contacto)){
                         Image(systemName: "pencil")
                             .modifier(botonCircular(color: .blue))
                     }
+                    
                 }
                 Spacer()
             }
@@ -63,6 +67,6 @@ struct botonCircular: ViewModifier{
 
 struct DetalleView_Previews: PreviewProvider {
     static var previews: some View {
-        DetalleView()
+        DetalleView(contacto: Contactos())
     }
 }
