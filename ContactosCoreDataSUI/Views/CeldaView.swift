@@ -17,7 +17,7 @@ struct CeldaView: View {
     
     var body: some View {
         HStack{
-            Text("JE")
+            Text(iniciales)
                 .padding(20)
                 .background(Color.gray)
                 .clipShape(Circle())
