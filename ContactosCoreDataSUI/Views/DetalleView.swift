@@ -32,7 +32,12 @@ struct DetalleView: View {
                     //.padding([.top], 0.001)
                 HStack{
                     Button(action: {
-                        print("c")
+                        guard let numero = URL(string: "tel://\(contacto.telefono)") else {
+                            return
+                        }
+                        
+                        UIApplication.shared.open(numero)
+                        
                     }){
                         Image(systemName: "phone.fill")
                             .modifier(botonCircular(color: .green))
