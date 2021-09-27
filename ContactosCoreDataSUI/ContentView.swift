@@ -10,6 +10,8 @@ import CoreData
 
 struct ContentView: View {
     
+    @Environment(\.managedObjectContext) var contexto
+    
     //@FetchRequest(fetchRequest: Contactos.mostrarContactos()) var contactos: FetchedResults<Contactos>
 
     @FetchRequest(entity: Contactos.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \Contactos.nombre, ascending: true)], animation: Animation.easeIn) var contactos : FetchedResults<Contactos>
@@ -24,14 +26,31 @@ struct ContentView: View {
         
         NavigationView{
             
-            VStack{
-                List(contactos){ contacto in
-                    NavigationLink(destination: DetalleView(), label: {
-                        CeldaView(nombre: contacto.nombre, apellido: contacto.apellido, telefono: contacto.telefono, iniciales: contacto.iniciales)
-                    })
+            VStack(alignment: .leading){
+                List {
+                    ForEach(contactos) { contacto in
                         
+                        NavigationLink(destination: DetalleView(), label: {
+                            CeldaView(nombre: contacto.nombre, apellido: contacto.apellido, telefono: contacto.telefono, iniciales: contacto.iniciales)
+                        })
+                        
+                    }.onDelete { (IndexSet) in
+                        
+                        let borrarContacto = self.contactos[IndexSet.first!]
+                        contexto.delete(borrarContacto)
+                        
+                        
+                        do{
+                            try self.contexto.save()
+                            print("Borrado!")
+                            
+                        } catch let error as NSError {
+                            print("Error al Borrar: \(error.localizedDescription) ")
+                        }
+                    }
                 }
                 
+                Spacer()
                 NavigationLink(destination: AgregarContactoView()){
                     Spacer()
                     Image(systemName: "plus.app.fill")
@@ -44,14 +63,11 @@ struct ContentView: View {
                 }.padding()
                     .background(Color.green)
                     .navigationBarTitle("Contactos", displayMode: .inline)
-            }
-            
-           
-            
-            
-            
+                    .navigationBarItems(leading: EditButton())
+                
+            } //Vstack
         }//NavigationView
-    }
+    } //body
 
 }
 
