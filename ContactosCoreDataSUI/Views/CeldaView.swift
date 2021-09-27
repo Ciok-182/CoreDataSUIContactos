@@ -8,6 +8,13 @@
 import SwiftUI
 
 struct CeldaView: View {
+    
+    var nombre: String
+    var apellido: String
+    var telefono: String
+    var iniciales: String
+    
+    
     var body: some View {
         HStack{
             Text("JE")
@@ -17,12 +24,12 @@ struct CeldaView: View {
                 .foregroundColor(.white)
                 .font(.title)
             VStack(alignment: .leading){
-                Text("Nombre")
+                Text(nombre)
                     .font(.title)
                     .bold()
-                Text("Apellido")
+                Text(apellido)
                     .font(.headline)
-                Text("5544332211")
+                Text(telefono)
                     .font(.caption)
                     .foregroundColor(.secondary)
                     //.padding([.top], 0.001)
@@ -34,6 +41,6 @@ struct CeldaView: View {
 
 struct CeldaView_Previews: PreviewProvider {
     static var previews: some View {
-        CeldaView()
+        CeldaView(nombre: "", apellido: "", telefono: "", iniciales: "")
     }
 }

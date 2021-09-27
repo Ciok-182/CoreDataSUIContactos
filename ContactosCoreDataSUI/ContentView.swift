@@ -18,9 +18,9 @@ struct ContentView: View {
         NavigationView{
             
             VStack{
-                List{
+                List(contactos){ contacto in
                     NavigationLink(destination: DetalleView(), label: {
-                        CeldaView()
+                        CeldaView(nombre: contacto.nombre, apellido: contacto.apellido, telefono: contacto.telefono, iniciales: contacto.iniciales)
                     })
                         
                 }
