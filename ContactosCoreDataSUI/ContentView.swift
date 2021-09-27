@@ -9,6 +9,9 @@ import SwiftUI
 import CoreData
 
 struct ContentView: View {
+    
+    //@FetchRequest(fetchRequest: Contactos.mostrarContactos())
+    @FetchRequest(fetchRequest: Contactos.mostrarContactos()) var contactos: FetchedResults<Contactos>
 
     var body: some View {
         

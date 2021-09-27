@@ -16,3 +16,14 @@ class Contactos: NSManagedObject, Identifiable{
     
 }
 
+extension Contactos{
+    static func mostrarContactos() -> NSFetchRequest<Contactos> {
+        // SQL select * from CONTACTOS
+        let request: NSFetchRequest<Contactos> = Contactos.fetchRequest() as! NSFetchRequest<Contactos>
+        //SQL orderby NOMBRE ASC
+        request.sortDescriptors = [NSSortDescriptor(key: "nombre", ascending: true)]
+        
+        return request
+        
+    }
+}

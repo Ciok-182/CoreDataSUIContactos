@@ -8,8 +8,56 @@
 import SwiftUI
 
 struct AgregarContactoView: View {
+    
+    @Environment(\.managedObjectContext) var contexto
+    @Environment(\.presentationMode) var atras
+    
+    @State private var nombre = ""
+    @State private var apellido = ""
+    @State private var telefono = ""
+    
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack{
+            TextField("Nombre", text: self.$nombre)
+                .padding(10)
+            TextField("Apellido", text: self.$apellido)
+                .padding(10)
+            TextField("Telefono", text: self.$telefono)
+                .padding(10)
+                .keyboardType(.phonePad)
+            Button(action: {
+                let iniciales = String(self.nombre.first ?? "A") + String(self.apellido.first ?? "A")
+                let nuevoContacto = Contactos(context: contexto)
+                nuevoContacto.nombre = nombre
+                nuevoContacto.apellido = apellido
+                nuevoContacto.telefono = telefono
+                nuevoContacto.iniciales = iniciales
+                
+                do{
+                    try self.contexto.save()
+                    print("Guardado!")
+                    atras.wrappedValue.dismiss()
+                    
+                } catch let error as NSError {
+                    print("Error al guardar: \(error.localizedDescription) ")
+                }
+                
+                
+            }, label: {
+                Image(systemName: "person.fill")
+                    .foregroundColor(.white)
+                    .font(.title)
+                Text("Guardar contacto")
+                    .foregroundColor(.white)
+                    .font(.title)
+            }).padding(10)
+                .background(Color.blue)
+            Spacer()
+                .navigationTitle("Agregar contacto")
+            
+            
+        }
     }
 }
 
