@@ -12,11 +12,11 @@ struct ContentView: View {
     
     //@FetchRequest(fetchRequest: Contactos.mostrarContactos()) var contactos: FetchedResults<Contactos>
 
-    //    @FetchRequest(entity: Contactos.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \Contactos.nombre, ascending: true)], animation: Animation.easeIn) var contactos : FetchedResults<Contactos>
+    @FetchRequest(entity: Contactos.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \Contactos.nombre, ascending: true)], animation: Animation.easeIn) var contactos : FetchedResults<Contactos>
     
-    @FetchRequest(entity: Contactos.entity(),
+    /*@FetchRequest(entity: Contactos.entity(),
                   sortDescriptors: [NSSortDescriptor(keyPath: \Contactos.nombre, ascending: true)],
-                  predicate: NSPredicate(format: "apellido = %@", "Encinas")) var contactos : FetchedResults<Contactos>
+                  predicate: NSPredicate(format: "apellido = %@", "Encinas")) var contactos : FetchedResults<Contactos>*/
     
     //SELECT * FROM CONTACTOS WHERE APELLIDO = 'Encinas' order bay nombre asc
 
